@@ -90,7 +90,7 @@ am_modulecmd_OBJECTS = modulecmd-ModuleCmd_Avail.$(OBJEXT) \
 	modulecmd-ModuleCmd_Whatis.$(OBJEXT) \
 	modulecmd-ModuleCmd_Refresh.$(OBJEXT) \
 	modulecmd-cmdAlias.$(OBJEXT) modulecmd-cmdConflict.$(OBJEXT) \
-	modulecmd-cmdIsLoaded.$(OBJEXT) modulecmd-cmdInfo.$(OBJEXT) \
+	modulecmd-cmdIsLoaded.$(OBJEXT) modulecmd-cmdInfo.$(OBJEXT) modulecmd-cmdSet.$(OBJEXT) \
 	modulecmd-cmdMisc.$(OBJEXT) modulecmd-cmdModule.$(OBJEXT) \
 	modulecmd-cmdPath.$(OBJEXT) modulecmd-cmdSetenv.$(OBJEXT) \
 	modulecmd-cmdUname.$(OBJEXT) modulecmd-cmdXResource.$(OBJEXT) \
@@ -329,7 +329,7 @@ modulecmd_SOURCES = \
 	ModuleCmd_Init.c ModuleCmd_List.c ModuleCmd_Load.c ModuleCmd_Purge.c \
 	ModuleCmd_Switch.c ModuleCmd_Update.c ModuleCmd_Use.c \
 	ModuleCmd_Whatis.c ModuleCmd_Refresh.c \
-	cmdAlias.c cmdConflict.c cmdIsLoaded.c cmdInfo.c cmdMisc.c cmdModule.c\
+	cmdAlias.c cmdConflict.c cmdIsLoaded.c cmdInfo.c cmdSet.c cmdMisc.c cmdModule.c\
 	cmdPath.c cmdSetenv.c cmdUname.c cmdXResource.c cmdUlvl.c cmdLog.c \
 	cmdChdir.c cmdTrace.c cmdVersion.c cmdVerbose.c cmdWhatis.c		\
 	init.c locate_module.c utility.c main.c error.c getopt.c version.c
@@ -491,6 +491,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdChdir.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdConflict.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdInfo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdSet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdIsLoaded.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdLog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdMisc.Po@am__quote@
@@ -763,6 +764,20 @@ modulecmd-cmdInfo.obj: cmdInfo.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cmdInfo.c' object='modulecmd-cmdInfo.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -c -o modulecmd-cmdInfo.obj `if test -f 'cmdInfo.c'; then $(CYGPATH_W) 'cmdInfo.c'; else $(CYGPATH_W) '$(srcdir)/cmdInfo.c'; fi`
+
+modulecmd-cmdSet.o: cmdSet.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -MT modulecmd-cmdSet.o -MD -MP -MF $(DEPDIR)/modulecmd-cmdSet.Tpo -c -o modulecmd-cmdSet.o `test -f 'cmdSet.c' || echo '$(srcdir)/'`cmdSet.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/modulecmd-cmdSet.Tpo $(DEPDIR)/modulecmd-cmdSet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cmdSet.c' object='modulecmd-cmdSet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -c -o modulecmd-cmdSet.o `test -f 'cmdSet.c' || echo '$(srcdir)/'`cmdSet.c
+
+modulecmd-cmdSet.obj: cmdSet.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -MT modulecmd-cmdSet.obj -MD -MP -MF $(DEPDIR)/modulecmd-cmdSet.Tpo -c -o modulecmd-cmdSet.obj `if test -f 'cmdSet.c'; then $(CYGPATH_W) 'cmdSet.c'; else $(CYGPATH_W) '$(srcdir)/cmdSet.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/modulecmd-cmdSet.Tpo $(DEPDIR)/modulecmd-cmdSet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cmdSet.c' object='modulecmd-cmdSet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -c -o modulecmd-cmdSet.obj `if test -f 'cmdSet.c'; then $(CYGPATH_W) 'cmdSet.c'; else $(CYGPATH_W) '$(srcdir)/cmdSet.c'; fi`
 
 modulecmd-cmdMisc.o: cmdMisc.c
 @am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(modulecmd_CFLAGS) $(CFLAGS) -MT modulecmd-cmdMisc.o -MD -MP -MF $(DEPDIR)/modulecmd-cmdMisc.Tpo -c -o modulecmd-cmdMisc.o `test -f 'cmdMisc.c' || echo '$(srcdir)/'`cmdMisc.c

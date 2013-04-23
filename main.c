@@ -76,6 +76,7 @@ int	  g_flags = 0,			/** Control what to do at the moment **/
 					/** module_def.h		     **/
 	  g_retval = 0,			/** exit return value		     **/
 	  g_output = 0,			/** Has output been generated	     **/
+	  g_resolve_symlinks = 0,   /** Resolve symlinks when setting loaded modules **/
 	  append_flag = 0;		/** only used by the 'use' command   **/
 
 char	  _default[] = "default";	/** id string for default versions   **/

@@ -505,6 +505,7 @@ extern	char	 *shell_cmd_separator;
 extern	int	  g_flags;
 extern	int	  g_retval;
 extern	int	  g_output;
+extern  int   g_resolve_symlinks;
 extern	int	  append_flag;
 extern	char	 *line;
 extern	char	 *error_line;
@@ -651,6 +652,9 @@ extern	int	  cmdModuleWhatis(ClientData,Tcl_Interp*,int,CONST84 char*[]);
 /**  cmdInfo.c  **/
 extern	int	  cmdModuleInfo(ClientData, Tcl_Interp*, int, CONST84 char*[]);
 extern	char	 *module_command;
+
+/**  cmdSet.c  **/
+extern	int	  cmdModuleSet(ClientData, Tcl_Interp*, int, CONST84 char*[]);
 
 /**  cmdMisc.c  **/
 extern	int	  cmdSystem( ClientData, Tcl_Interp*, int, CONST84 char*[]);

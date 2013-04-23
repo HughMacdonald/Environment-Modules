@@ -629,6 +629,9 @@ int InitializeModuleCommands( Tcl_Interp* interp)
 		       (ClientData) shell_derelict,(void (*)(ClientData)) NULL);
     Tcl_CreateCommand( interp, "module-version", cmdModuleVersion, 
 		       (ClientData) shell_derelict,(void (*)(ClientData)) NULL);
+
+    Tcl_CreateCommand( interp, "module-set", cmdModuleSet, 
+		       (ClientData) shell_derelict,(void (*)(ClientData)) NULL);
   
     Tcl_CreateCommand( interp, "set-alias", cmdSetAlias, 
 		       (ClientData) shell_derelict,(void (*)(ClientData)) NULL);

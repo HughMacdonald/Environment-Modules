@@ -213,6 +213,12 @@ int	ModuleCmd_Load(	Tcl_Interp	*interp,
          **/
 
 	g_current_module = modulename;
+	if(!load)
+	    g_specified_module = modulename;
+	
+	if(load)
+    	g_resolve_symlinks = 0;
+
 	if( TCL_OK == return_val) {
 	    return_val = Read_Modulefile(tmp_interp, filename);
 	    em_return_val = ReturnValue(tmp_interp, return_val);
@@ -229,7 +235,7 @@ int	ModuleCmd_Load(	Tcl_Interp	*interp,
 		 ** has ceased
 		 **/
 		Tcl_ResetResult(tmp_interp);
-		Update_LoadedList( tmp_interp, modulename, filename);
+		Update_LoadedList( tmp_interp, g_current_module, filename);
 
 		/**
 		 **  Save the current environment setup before the next module

@@ -2140,6 +2140,38 @@ int Update_LoadedList(	Tcl_Interp	*interp,
 #endif
 
     /**
+     **  If we need to resolve symlinks, do that first
+     **/
+     
+    if( g_resolve_symlinks == 1) {
+        int len = strlen(filename) - strlen(modulename);
+        char *modulepath = malloc(strlen(filename));
+        strcpy(modulepath, filename);
+        modulepath[len] = '\0';
+        
+        char new_filename[PATH_MAX];
+        
+        realpath(filename, new_filename);
+        
+        char *new_modulepath = malloc(strlen(new_filename));
+        strncpy(new_modulepath, new_filename, len);
+        new_modulepath[len] = '\0';
+
+        /**
+         **  Only use the resolved file if it is in the same
+         **  path as the original
+         **/
+        if( !strcmp(modulepath, new_modulepath)) {
+            filename = new_filename;
+            modulename = filename + len;
+        }
+        
+        
+        free(modulepath);
+        free(new_modulepath);
+    }
+
+    /**
      **  Apply changes to LOADEDMODULES first
      **/
     argv[1] = "LOADEDMODULES";
