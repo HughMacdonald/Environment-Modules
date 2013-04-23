@@ -1,7 +1,7 @@
 ###########################################################################
 ##
 ## File:        modulefiles/Makefile.am
-## Versions:    $Id: Makefile.am,v 1.4.20.1 2010/11/11 18:23:19 rkowen Exp $
+## Versions:    $Id: af42d2fb4a611eb35a5beb7537ff358503c5a2a4 $
 ## Created:     2002/06/14
 ##
 ###########################################################################
@@ -10,7 +10,7 @@
 AUTOMAKE_OPTIONS=foreign no-installinfo
 
 BASEMODULES= \
-	dot module-cvs module-info modules null use.own
+	dot module-git module-info modules null use.own
 
 EXTRA_SCRIPTS= ${BASEMODULES} version
 
@@ -72,8 +72,8 @@ uninstall-basemodules :
 ##dot : dot.in ../config.status
 ##	(cd ..; config.status modulefiles/dot)
 ##
-##module-cvs : module-cvs.in ../config.status
-##	(cd ..; config.status modulefiles/module-cvs)
+##module-git : module-git.in ../config.status
+##	(cd ..; config.status modulefiles/module-git)
 ##
 ##module-info : module-info.in ../config.status
 ##	(cd ..; config.status modulefiles/module-info)

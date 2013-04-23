@@ -40,7 +40,7 @@
  ** 									     ** 
  ** ************************************************************************ **/
 
-static char Id[] = "@(#)$Id: cmdXResource.c,v 1.7.20.1 2010/11/11 18:23:18 rkowen Exp $";
+static char Id[] = "@(#)$Id: e6fc28fce15ed84f961b4e38341d9212cf285c25 $";
 static void *UseId[] = { &UseId, Id };
 
 /** ************************************************************************ **/
@@ -427,9 +427,11 @@ static	ErrType getEntries(	Tcl_Interp	*interp,
 				register char	*buf,
 				int		 remove)
 {
-    Tcl_RegExp		res_exp = (Tcl_RegExp) NULL;
     register Tcl_HashEntry	*entry;
-    char			*end;
+    char			*end,
+				 Res="^[ \t]*([^ \t]*)[ \t]*:[ \t]*(.*)[ \t]*$";
+    static Tcl_Obj		*res_obj = (Tcl_Obj *) NULL;
+    static Tcl_RegExp		 res_exp = (Tcl_RegExp) NULL;
     int				 new_res;
 
 #if WITH_DEBUGGING_UTIL_1
@@ -446,9 +448,10 @@ static	ErrType getEntries(	Tcl_Interp	*interp,
      **  is a constant regexp!
      **/
 
-    if( !res_exp)
-	res_exp  = Tcl_RegExpCompile(interp,
-		 "^[ \t]*([^ \t]*)[ \t]*:[ \t]*(.*)[ \t]*$");
+    if(!res_obj)
+	res_obj = Tcl_NewStringObj(Res,strlen(Res));
+    if(!res_exp)
+	res_exp  = Tcl_GetRegExpFromObj(interp, res_obj,TCL_REG_ADVANCED);
 
     /**
      **  Seek for the lines (buffers) end. Put a terminator there. Take care of

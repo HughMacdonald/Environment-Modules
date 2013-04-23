@@ -1,6 +1,6 @@
 dnl
 dnl File:        configure.in
-dnl Revision:    $Id: configure.ac,v 1.20.18.1 2010/11/11 18:23:18 rkowen Exp $
+dnl Revision:    $Id: ed9cdf94e42cc99c71ddb5de1295f1fca06c7066 $
 dnl Created:     1994/06/18
 dnl Author:      Leif Hedstrom<hedstrom@inf.ethz.ch>
 dnl		 Martin S. Utesch <wstd@hl.siemens.de>
@@ -187,7 +187,7 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS(string.h memory.h stdlib.h unistd.h termio.h fcntl.h ctype.h \
 	stdarg.h varargs.h syslog.h stdint.h)dnl
 AC_CHECK_HEADERS([sys/ioctl.h sys/termios.h sys/mode.h sys/stat.h sys/param.h \
-		  errno.h assert.h])dnl
+		  errno.h assert.h locale.h])dnl
 dnl ---------------------------------------------------------------------------
 dnl Checks for typedefs, structures, and compiler characteristics.
 dnl ---------------------------------------------------------------------------
@@ -198,9 +198,10 @@ AC_STRUCT_TM
 dnl ---------------------------------------------------------------------------
 dnl Checks for library functions.
 dnl ---------------------------------------------------------------------------
+AC_FUNC_STRCOLL
 AC_CHECK_FUNCS([strdup uname gethostname getdomainname \
 	mktemp tmpnam tempnam \
-	syslog dup2])dnl
+	syslog dup2 setlocale])dnl
 dnl ---------------------------------------------------------------------------
 dnl Checks for libraries
 dnl ---------------------------------------------------------------------------
@@ -989,7 +990,7 @@ AC_CONFIG_FILES([Makefile modules.lsm .spec doc/Makefile
 	ext/common/.cshrc ext/common/.login 
 	ext/common/.kshenv ext/common/.profile 
 	modulefiles/Makefile modulefiles/modules
-	modulefiles/module-cvs modulefiles/module-info modulefiles/null
+	modulefiles/module-git modulefiles/module-info modulefiles/null
 	modulefiles/use.own modulefiles/dot modulefiles/version
 	])dnl
 dnl We want these to be recreated for each install

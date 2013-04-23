@@ -354,6 +354,12 @@ Some of the information is specific to the internals of \fBmodulecmd\fP.
 \fIoption\fP is the type of information to be provided, and \fIinfo-args\fP
 are any arguments needed.
 .TP
+.B module-info type
+.RS
+Returns either "C" or "Tcl" to indicate which module command is being
+executed, either the "C" version or the Tcl-only version, to allow the
+modulefile writer to handle any differences between the two.
+.RE
 .B module-info flags
 .RS
 Returns the integer value of \fBmodulecmd's\fP flags state.
@@ -840,7 +846,8 @@ So, changes made in these file will affect the subsequently
 interpreted \fImodulefile\fP.
 .LP
 If no \fIdefault\fP version may be figured out, then the highest
-lexicographically sorted \fImodulefile\fP under the directory will be used.
+lexicographically sorted \fImodulefile\fP under the directory
+using the 'C' locale will be used.
 .LP
 For example, it is possible for a user to have a directory named \fIX11\fP
 which simply contains a \fI.version\fP file specifying which
