@@ -15,3 +15,15 @@
 *.exe
 *.out
 *.app
+
+.deps
+.spec
+Makefile
+autom4te.cache
+config.h
+config.log
+config.status
+modulecmd
+modules.lsm
+stamp-h
+stamp-h1
