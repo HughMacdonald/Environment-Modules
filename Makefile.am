@@ -34,7 +34,7 @@ modulecmd_SOURCES = \
 	ModuleCmd_Init.c ModuleCmd_List.c ModuleCmd_Load.c ModuleCmd_Purge.c \
 	ModuleCmd_Switch.c ModuleCmd_Update.c ModuleCmd_Use.c \
 	ModuleCmd_Whatis.c ModuleCmd_Refresh.c \
-	cmdAlias.c cmdConflict.c cmdIsLoaded.c cmdInfo.c cmdMisc.c cmdModule.c\
+	cmdAlias.c cmdConflict.c cmdIsLoaded.c cmdInfo.c cmdSet.c cmdMisc.c cmdModule.c\
 	cmdPath.c cmdSetenv.c cmdUname.c cmdXResource.c cmdUlvl.c cmdLog.c \
 	cmdChdir.c cmdTrace.c cmdVersion.c cmdVerbose.c cmdWhatis.c		\
 	init.c locate_module.c utility.c main.c error.c getopt.c version.c
