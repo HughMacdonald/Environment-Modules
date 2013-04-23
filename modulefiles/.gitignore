@@ -5,3 +5,4 @@ modules
 null
 use.own
 version
+module-git
