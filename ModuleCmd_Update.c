@@ -25,7 +25,7 @@
  ** 									     ** 
  ** ************************************************************************ **/
 
-static char Id[] = "@(#)$Id: ModuleCmd_Update.c,v 1.6.18.5 2011/11/28 21:13:15 rkowen Exp $";
+static char Id[] = "@(#)$Id: 1286756fe8af52b423fea50510cbfd76ead170e6 $";
 static void *UseId[] = { &UseId, Id };
 
 /** ************************************************************************ **/
@@ -44,7 +44,7 @@ static void *UseId[] = { &UseId, Id };
 /** 				     CONSTANTS				     **/
 /** ************************************************************************ **/
 
-#define	UPD_BUFSIZE	1024
+#define	UPD_BUFSIZE	2048
 
 /** ************************************************************************ **/
 /**				      MACROS				     **/
@@ -84,7 +84,7 @@ static	char	_proc_ModuleCmd_Update[] = "ModuleCmd_Update";
  **   Result:		int	TCL_ERROR	Failure			     **
  **				TCL_OK		Successful operation	     **
  ** 									     **
- **   Attached Globals:	flags		Controllig the callback functions    **
+ **   Attached Globals:	flags		Controls the callback functions      **
  ** 									     **
  ** ************************************************************************ **
  ++++*/
