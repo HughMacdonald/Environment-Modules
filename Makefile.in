@@ -90,7 +90,8 @@ am_modulecmd_OBJECTS = modulecmd-ModuleCmd_Avail.$(OBJEXT) \
 	modulecmd-ModuleCmd_Whatis.$(OBJEXT) \
 	modulecmd-ModuleCmd_Refresh.$(OBJEXT) \
 	modulecmd-cmdAlias.$(OBJEXT) modulecmd-cmdConflict.$(OBJEXT) \
-	modulecmd-cmdIsLoaded.$(OBJEXT) modulecmd-cmdInfo.$(OBJEXT) modulecmd-cmdSet.$(OBJEXT) \
+	modulecmd-cmdIsLoaded.$(OBJEXT) modulecmd-cmdInfo.$(OBJEXT) \
+	modulecmd-cmdSet.$(OBJEXT) \
 	modulecmd-cmdMisc.$(OBJEXT) modulecmd-cmdModule.$(OBJEXT) \
 	modulecmd-cmdPath.$(OBJEXT) modulecmd-cmdSetenv.$(OBJEXT) \
 	modulecmd-cmdUname.$(OBJEXT) modulecmd-cmdXResource.$(OBJEXT) \
@@ -491,13 +492,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdChdir.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdConflict.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdInfo.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdSet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdIsLoaded.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdLog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdMisc.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdModule.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdPath.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdSetenv.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdSet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdTrace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdUlvl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modulecmd-cmdUname.Po@am__quote@
